@@ -34,7 +34,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/orders', [OrderController::class, 'vendorOrders']);
         Route::put('/orders/{id}/status', [OrderController::class, 'updateItemStatus']);
     });
-
+    
     // Admin
     Route::middleware('role:admin')->prefix('admin')->group(function () {
         Route::get('/stats', [AdminController::class, 'stats']);
